@@ -55,18 +55,8 @@ public class Trap : MonoBehaviour
 
     private void HandleDetection(IReadOnlyList<ITargetable> candidates)
     {
-        if (candidates == null || candidates.Count == 0)
-        {
-            return;
-        }
-
         var context = BuildContext();
         var targets = SelectTargets(context, candidates);
-
-        if (targets.Count == 0)
-        {
-            return;
-        }
 
         foreach (var condition in contitions)
         {
